@@ -8,7 +8,7 @@ Sistema simples de gerenciamento de **produtos e clientes**, desenvolvido em Pyt
 - Clientes: cadastrar, listar, consultar pelo e-mail, alterar nome/telefone e excluir.
 - Validações: códigos e e-mails não podem se repetir; campos não podem ficar vazios; e-mail deve ter formato básico válido; preço deve ser numérico, finito e maior que zero; estoque deve ser inteiro não negativo; exclusões exigem confirmação.
 
-Os códigos dos produtos e e-mails dos clientes são identificadores e **não são alterados**. Para mudá-los, exclua o registro e cadastre novamente. O preço é arredondado a duas casas decimais; este projeto não implementa vendas nem pagamentos.
+Os códigos dos produtos e e-mails dos clientes são identificadores e **não são alterados**. Para mudá-los, exclua o registro e cadastre novamente. O preço é arredondado a duas casas decimais e exibido em reais (ex.: `R$ 15,90`); este projeto não implementa vendas nem pagamentos.
 
 ## Como executar
 
@@ -27,6 +27,7 @@ No Windows, se `python` não funcionar, tente `py main.py`. Escolha `1` para pro
 - `main.py`: menus, entrada e saída pelo terminal com `input()` e `print()`; contém as listas de produtos e clientes da sessão.
 - `regras.py`: funções de CRUD, busca e validação das regras de negócio.
 - `test_regras.py`: testes automatizados das operações e validações.
+- `test_interface.py`: testes da exibição de produtos e preços no terminal.
 - `ROTEIRO_VIDEO.md`: guia para a gravação real da demonstração de 5 a 10 minutos.
 
 Para executar os testes:
@@ -57,4 +58,4 @@ Sugira melhorias que respeitem os requisitos do projeto acadêmico, mantendo a e
 
 ## Entrega e colaboração
 
-Repositório público: https://github.com/LimaCaue/loja-coding-av2 . O projeto está sendo desenvolvido individualmente. O histórico público do GitHub documenta as contribuições realizada.
+Repositório público: https://github.com/LimaCaue/loja-coding-av2. O projeto está sendo desenvolvido individualmente. O histórico público do GitHub documenta as contribuições realizadas.
