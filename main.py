@@ -12,9 +12,15 @@ from regras import (
 )
 
 
+def formatar_preco(valor):
+    """Mostra valores em reais com vírgula decimal."""
+    inteiro, centavos = f"{valor:.2f}".split(".")
+    return f"R$ {inteiro},{centavos}"
+
+
 def mostrar_produto(produto):
     print(f"Código: {produto['codigo']} | Nome: {produto['nome']} | "
-          f"Preço: R$ {produto['preco']:.2f} | Estoque: {produto['estoque']}")
+          f"Preço: {formatar_preco(produto['preco'])} | Estoque: {produto['estoque']}")
 
 
 def mostrar_cliente(cliente):
