@@ -6,7 +6,7 @@ Sistema simples de gerenciamento de **produtos e clientes**, desenvolvido em Pyt
 
 - Produtos: cadastrar, listar, consultar pelo código, alterar nome/preço/estoque e excluir.
 - Clientes: cadastrar, listar, consultar pelo e-mail, alterar nome/telefone e excluir.
-- Validações: códigos e e-mails não podem se repetir; campos não podem ficar vazios; e-mail deve ter formato básico válido; preço deve ser numérico, finito e maior que zero; estoque deve ser inteiro não negativo; exclusões exigem confirmação.
+- Validações: códigos e e-mails não podem se repetir; campos não podem ficar vazios; e-mail deve ter formato básico válido; telefone deve ter DDD e 8 ou 9 dígitos (espaços, parênteses e hífens são aceitos e removidos ao salvar); preço deve ser numérico, finito e maior que zero; estoque deve ser inteiro não negativo; exclusões exigem confirmação.
 
 Os códigos dos produtos e e-mails dos clientes são identificadores e **não são alterados**. Para mudá-los, exclua o registro e cadastre novamente. O preço é arredondado a duas casas decimais e exibido em reais (ex.: `R$ 15,90`); este projeto não implementa vendas nem pagamentos.
 
