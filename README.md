@@ -1,5 +1,7 @@
 # Sistema de Loja — Projeto Avaliativo de Coding (AV2)
 
+[![Testes](https://github.com/LimaCaue/loja-coding-av2/actions/workflows/testes.yml/badge.svg)](https://github.com/LimaCaue/loja-coding-av2/actions/workflows/testes.yml)
+
 Sistema simples de gerenciamento de **produtos e clientes**, desenvolvido em Python para funcionar exclusivamente no terminal. Seu objetivo é organizar o cadastro e a consulta de informações de uma pequena loja durante uma sessão de uso.
 
 ## Funcionalidades
@@ -29,12 +31,16 @@ No Windows, se `python` não funcionar, tente `py main.py`. Escolha `1` para pro
 - `test_regras.py`: testes automatizados das operações e validações.
 - `test_interface.py`: testes da exibição de produtos e preços no terminal.
 - `ROTEIRO_VIDEO.md`: guia para a gravação real da demonstração de 5 a 10 minutos.
+- `.github/workflows/testes.yml`: executa os testes automaticamente no GitHub Actions.
+- `.github/pull_request_template.md`: modelo com o checklist usado nos Pull Requests.
 
 Para executar os testes:
 
 ```bash
 python -m unittest -v
 ```
+
+Os mesmos testes rodam automaticamente no GitHub Actions (Python 3.10 e 3.13) a cada push na `main` e em todo Pull Request. O resultado aparece na aba **Actions** e no selo do topo deste README.
 
 ## Uso de IA durante o desenvolvimento
 
