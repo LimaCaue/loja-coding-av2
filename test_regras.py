@@ -40,6 +40,14 @@ class TesteProdutos(unittest.TestCase):
             alterar_produto(self.produtos, "A", "Outro", "0", "3")
         self.assertEqual(self.produtos[0]["nome"], "Caneta")
 
+    def test_alterar_ou_excluir_produto_inexistente(self):
+        cadastrar_produto(self.produtos, "A", "Caneta", "2", "1")
+        with self.assertRaises(ValueError):
+            alterar_produto(self.produtos, "Z99", "Lápis", "1", "1")
+        with self.assertRaises(ValueError):
+            excluir_produto(self.produtos, "Z99")
+        self.assertEqual(len(self.produtos), 1)
+
 
 class TesteClientes(unittest.TestCase):
     def setUp(self):
@@ -66,6 +74,14 @@ class TesteClientes(unittest.TestCase):
             cadastrar_cliente(self.clientes, " ", "teste@exemplo.com", "123")
         with self.assertRaises(ValueError):
             cadastrar_cliente(self.clientes, "Teste", "teste@exemplo.com", " ")
+
+    def test_alterar_ou_excluir_cliente_inexistente(self):
+        cadastrar_cliente(self.clientes, "Ana", "ana@exemplo.com", "83999999999")
+        with self.assertRaises(ValueError):
+            alterar_cliente(self.clientes, "outro@exemplo.com", "Bia", "83988888888")
+        with self.assertRaises(ValueError):
+            excluir_cliente(self.clientes, "outro@exemplo.com")
+        self.assertEqual(len(self.clientes), 1)
 
 
 if __name__ == "__main__":
