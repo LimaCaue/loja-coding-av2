@@ -16,7 +16,7 @@ Cadastre `C01`, `Caderno`, preço `15,90`, estoque `10`. Liste e consulte por `C
 
 ## 3:10–4:50 — Clientes
 
-Cadastre `Ana`, `ana@exemplo.com`, telefone `83999999999`. Liste e consulte pelo e-mail. Altere nome e telefone; consulte novamente. Demonstre e-mail duplicado e e-mail sem `@`. Exclua a cliente com confirmação.
+Cadastre `Ana`, `ana@exemplo.com`, telefone `83999999999`. Liste e consulte pelo e-mail. Altere nome e telefone; consulte novamente. Demonstre e-mail duplicado, e-mail sem `@` e telefone sem DDD (ex.: `99999-9999`). Exclua a cliente com confirmação.
 
 ## 4:50–6:15 — Funcionamento interno e testes
 
