@@ -8,7 +8,7 @@ Apresente-se, diga que este é o projeto avaliativo de Coding (AV2), e explique 
 
 ## 0:45–1:30 — Estrutura e execução
 
-Mostre `main.py` (interface e listas), `regras.py` (validação e CRUD), `test_regras.py` (testes) e `README.md`. Execute `python main.py`.
+Mostre `main.py` (interface e listas), `regras.py` (validação e CRUD), `test_regras.py` e `test_interface.py` (testes) e `README.md`. Execute `python main.py`.
 
 ## 1:30–3:10 — Produtos
 
@@ -24,12 +24,12 @@ Explique como as listas são passadas às funções, como `buscar_produto`/`busc
 
 ## 6:15–7:15 — GitHub e encerramento
 
-Mostre o repositório público, a branch `main`, a branch de documentação e o Pull Request correspondente, com commits reais. Cite três prompts registrados no README, o que foi solicitado e o que foi verificado. Finalize resumindo funcionalidades e limites: não há venda nem armazenamento permanente.
+Mostre o repositório público, a branch `main` e as branches `feature/`, `ci/` e `docs/`. Abra um Pull Request mesclado e mostre seus commits, o checklist preenchido e os testes do GitHub Actions aprovados. Cite os três prompts registrados no README, com o objetivo e o resultado de cada um. Finalize resumindo funcionalidades e limites: não há venda nem armazenamento permanente.
 
 ## Checklist antes da entrega
 
 - [ ] Vídeo real gravado, com sua voz, imagem do terminal e duração entre 5 e 10 minutos.
 - [ ] Testes demonstrados e CRUD das duas entidades visível.
-- [ ] Branches, commits e Pull Request mostrados no GitHub.
+- [ ] Branches, commits, Pull Requests e testes do GitHub Actions mostrados no GitHub.
 - [ ] Link do repositório e link/arquivo do vídeo enviados na plataforma, conforme o método aceito pelo professor.
 - [ ] Apresentação presencial preparada: você consegue explicar o código sem depender de leitura integral deste roteiro.
