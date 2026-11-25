@@ -44,17 +44,26 @@ Estou desenvolvendo um projeto acadêmico em Python para a disciplina de Coding,
 
 Sugira uma estrutura de organização do código em módulos, considerando as funcionalidades de cadastro, consulta, alteração e exclusão de produtos e clientes. Utilize conceitos básicos de programação em Python e priorize uma estrutura de fácil compreensão e manutenção.
 
+- **Objetivo:** definir, antes de programar, como dividir o sistema em módulos e funções respeitando as restrições da atividade: uso só do terminal e dados em listas na memória.
+- **Resultado:** o código foi separado em `main.py` (menus, `input()`/`print()` e listas da sessão) e `regras.py` (CRUD e validações), com uma função para cada operação de produtos e de clientes. Essa divisão permite testar as regras sem passar pelos menus.
+
 **Prompt 2 — Regras de negócio e validação de dados**
 
 Considerando um sistema de gerenciamento de loja desenvolvido em Python, quais regras de negócio e validações devem ser aplicadas nas operações de cadastro, consulta, alteração e exclusão de produtos e clientes?
 
 Considere situações como campos obrigatórios, registros duplicados, preços negativos, quantidades inválidas em estoque e tentativas de alteração ou exclusão de registros inexistentes. Apresente exemplos utilizando funções, listas e estruturas condicionais em Python.
 
+- **Objetivo:** levantar as regras de negócio coerentes com uma loja e entender como tratá-las com funções, listas e condicionais.
+- **Resultado:** `regras.py` passou a validar campos obrigatórios, códigos e e-mails únicos, formato do e-mail, preço numérico maior que zero e estoque inteiro não negativo. Alterar ou excluir um registro inexistente gera mensagem de erro, e as exclusões pedem confirmação no menu.
+
 **Prompt 3 — Revisão de código e testes**
 
 Analise o código-fonte do nosso sistema de gerenciamento de loja em Python, verificando possíveis erros de lógica, repetição de código, problemas de organização e falhas nas validações.
 
 Sugira melhorias que respeitem os requisitos do projeto acadêmico, mantendo a execução pelo terminal e o armazenamento exclusivamente em listas. Apresente também cenários de teste para verificar o funcionamento das operações de cadastro, consulta, alteração e exclusão de produtos e clientes. Explique as sugestões sem alterar diretamente o código original.
+
+- **Objetivo:** revisar o código já escrito e planejar cenários de teste, recebendo explicações em vez de código pronto, para entender cada mudança antes de aplicá-la.
+- **Resultado:** os cenários sugeridos viraram testes automatizados em `test_regras.py` e `test_interface.py` (CRUD, duplicidades, valores inválidos, registros inexistentes e exibição de preços). A revisão também levou à validação do telefone com DDD e à execução automática dos testes no GitHub Actions a cada Pull Request.
 
 ## Entrega e colaboração
 
