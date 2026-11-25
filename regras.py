@@ -18,6 +18,15 @@ def validar_email(email):
     return email
 
 
+def validar_telefone(telefone):
+    """Aceita DDD + número (10 ou 11 dígitos), ignorando espaços, parênteses, pontos e hífens."""
+    telefone = validar_texto(telefone, "Telefone")
+    digitos = re.sub(r"[\s().-]", "", telefone)
+    if not re.fullmatch(r"[0-9]{10,11}", digitos):
+        raise ValueError("O telefone deve ter DDD e 8 ou 9 dígitos (ex.: 83 99999-9999).")
+    return digitos
+
+
 def validar_preco(preco):
     try:
         valor = float(str(preco).replace(",", "."))
@@ -80,7 +89,7 @@ def buscar_cliente(clientes, email):
 def cadastrar_cliente(clientes, nome, email, telefone):
     nome = validar_texto(nome, "Nome")
     email = validar_email(email)
-    telefone = validar_texto(telefone, "Telefone")
+    telefone = validar_telefone(telefone)
     if buscar_cliente(clientes, email):
         raise ValueError("Já existe um cliente com esse e-mail.")
     cliente = {"nome": nome, "email": email, "telefone": telefone}
@@ -93,7 +102,7 @@ def alterar_cliente(clientes, email, nome, telefone):
     if cliente is None:
         raise ValueError("Cliente não encontrado.")
     nome = validar_texto(nome, "Nome")
-    telefone = validar_texto(telefone, "Telefone")
+    telefone = validar_telefone(telefone)
     cliente.update(nome=nome, telefone=telefone)
     return cliente
 
