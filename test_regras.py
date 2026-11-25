@@ -3,8 +3,14 @@
 import unittest
 
 from regras import (
-    alterar_cliente, alterar_produto, buscar_cliente, buscar_produto,
-    cadastrar_cliente, cadastrar_produto, excluir_cliente, excluir_produto,
+    alterar_cliente,
+    alterar_produto,
+    buscar_cliente,
+    buscar_produto,
+    cadastrar_cliente,
+    cadastrar_produto,
+    excluir_cliente,
+    excluir_produto,
 )
 
 
