@@ -35,9 +35,8 @@ class TesteProdutos(unittest.TestCase):
     def test_preco_e_estoque_invalidos(self):
         for preco, estoque in [("0", "1"), ("-1", "2"), ("nan", "1"),
                                ("inf", "1"), ("2", "-1"), ("2", "1.5")]:
-            with self.subTest(preco=preco, estoque=estoque):
-                with self.assertRaises(ValueError):
-                    cadastrar_produto(self.produtos, "B", "Borracha", preco, estoque)
+            with self.subTest(preco=preco, estoque=estoque), self.assertRaises(ValueError):
+                cadastrar_produto(self.produtos, "B", "Borracha", preco, estoque)
         self.assertEqual(self.produtos, [])
 
     def test_alteracao_invalida_nao_muda_produto(self):
@@ -70,9 +69,8 @@ class TesteClientes(unittest.TestCase):
     def test_email_duplicado_ou_invalido(self):
         cadastrar_cliente(self.clientes, "Ana", "ana@exemplo.com", "83999999999")
         for email in ("ANA@EXEMPLO.COM", "sem-arroba"):
-            with self.subTest(email=email):
-                with self.assertRaises(ValueError):
-                    cadastrar_cliente(self.clientes, "Bia", email, "83988888888")
+            with self.subTest(email=email), self.assertRaises(ValueError):
+                cadastrar_cliente(self.clientes, "Bia", email, "83988888888")
         self.assertEqual(len(self.clientes), 1)
 
     def test_telefone_formatado_e_salvo_so_com_digitos(self):
@@ -81,9 +79,8 @@ class TesteClientes(unittest.TestCase):
 
     def test_telefone_invalido(self):
         for telefone in ("123", "99999-9999", "839999999999", "83 9999a-9999"):
-            with self.subTest(telefone=telefone):
-                with self.assertRaises(ValueError):
-                    cadastrar_cliente(self.clientes, "Ana", "ana@exemplo.com", telefone)
+            with self.subTest(telefone=telefone), self.assertRaises(ValueError):
+                cadastrar_cliente(self.clientes, "Ana", "ana@exemplo.com", telefone)
         self.assertEqual(self.clientes, [])
 
     def test_alteracao_com_telefone_invalido_nao_muda_cliente(self):
