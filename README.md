@@ -68,3 +68,10 @@ Sugira melhorias que respeitem os requisitos do projeto acadêmico, mantendo a e
 ## Entrega e colaboração
 
 Repositório público: https://github.com/LimaCaue/loja-coding-av2. O projeto está sendo desenvolvido individualmente. O histórico público do GitHub documenta as contribuições realizadas.
+
+### Fluxo de trabalho no GitHub
+
+1. Cada mudança é feita em uma branch própria criada a partir da `main`, com um prefixo que indica o tipo: `feature/` (funcionalidade), `ci/` (automação) ou `docs/` (documentação).
+2. Os commits são pequenos e usam o mesmo padrão na mensagem: `feat`, `test`, `ci` ou `docs`, seguido de uma descrição curta.
+3. A branch é enviada ao GitHub e integrada à `main` por um Pull Request, que segue o checklist do modelo do repositório e só é mesclado depois que os testes do GitHub Actions passam.
+4. Depois da mesclagem, a `main` atualizada é o ponto de partida da próxima branch.
