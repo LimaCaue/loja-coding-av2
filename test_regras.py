@@ -62,16 +62,34 @@ class TesteClientes(unittest.TestCase):
         self.assertIsNone(buscar_cliente(self.clientes, "ana@exemplo.com"))
 
     def test_email_duplicado_ou_invalido(self):
-        cadastrar_cliente(self.clientes, "Ana", "ana@exemplo.com", "123")
+        cadastrar_cliente(self.clientes, "Ana", "ana@exemplo.com", "83999999999")
         for email in ("ANA@EXEMPLO.COM", "sem-arroba"):
             with self.subTest(email=email):
                 with self.assertRaises(ValueError):
-                    cadastrar_cliente(self.clientes, "Bia", email, "456")
+                    cadastrar_cliente(self.clientes, "Bia", email, "83988888888")
         self.assertEqual(len(self.clientes), 1)
+
+    def test_telefone_formatado_e_salvo_so_com_digitos(self):
+        cliente = cadastrar_cliente(self.clientes, "Ana", "ana@exemplo.com", "(83) 99999-9999")
+        self.assertEqual(cliente["telefone"], "83999999999")
+
+    def test_telefone_invalido(self):
+        for telefone in ("123", "99999-9999", "839999999999", "83 9999a-9999"):
+            with self.subTest(telefone=telefone):
+                with self.assertRaises(ValueError):
+                    cadastrar_cliente(self.clientes, "Ana", "ana@exemplo.com", telefone)
+        self.assertEqual(self.clientes, [])
+
+    def test_alteracao_com_telefone_invalido_nao_muda_cliente(self):
+        cadastrar_cliente(self.clientes, "Ana", "ana@exemplo.com", "83999999999")
+        with self.assertRaises(ValueError):
+            alterar_cliente(self.clientes, "ana@exemplo.com", "Ana Silva", "123")
+        self.assertEqual(self.clientes[0]["nome"], "Ana")
+        self.assertEqual(self.clientes[0]["telefone"], "83999999999")
 
     def test_campos_obrigatorios(self):
         with self.assertRaises(ValueError):
-            cadastrar_cliente(self.clientes, " ", "teste@exemplo.com", "123")
+            cadastrar_cliente(self.clientes, " ", "teste@exemplo.com", "83999999999")
         with self.assertRaises(ValueError):
             cadastrar_cliente(self.clientes, "Teste", "teste@exemplo.com", " ")
 
